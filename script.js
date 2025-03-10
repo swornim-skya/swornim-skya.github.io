@@ -45,3 +45,13 @@ dots.forEach((li, key) => {
         reloadSlider();
     })
 })
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".circular-progress").forEach(progress => {
+        let value = progress.getAttribute("data-progress");
+        let degrees = (value / 100) * 360;
+        progress.style.setProperty('--progress-degrees', `${degrees}deg`);
+    });
+});
